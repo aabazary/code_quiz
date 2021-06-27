@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin-top:20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    background-color: #83CEEC;
+    border: 10px solid #284177;
+    
+}
+#playbutton{
+    display: flex;
+    background-color: #284177;
+    width: fit-content;
+    height: 20px;
+    color: #EDE8E4;
+    border: 20px solid #C2AFA8;
+    border-radius: 10px;
+    padding: 10px;
+                                                
+}
