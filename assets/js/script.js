@@ -27,3 +27,25 @@ var questions = [
     },
 
 ];
+var questionIndex = 0;
+var questionDiv = document.querySelector("#question");
+var startButton = document.querySelector('#start-button')
+var remainingTime = document.querySelector('#timer')
+var secondsLeft = 1000;
+var holdInterval = 0;
+var penalty = 10;
+var ul = document.createElement("ul");
+
+startButton.addEventListener("click", function () {
+    if (holdInterval === 0) {
+        holdInterval = setInterval(function () {
+            secondsLeft--;
+            remainingTime.textContent = "Time: " + secondsLeft;
+
+            if (secondsLeft <= 0) {
+                clearInterval(holdInterval);
+                remainingTime.textContent = "Time's up!";
+            }
+        }, 1000);
+    }
+});
