@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+.hide{
+    display: none;
+}
 body{
     margin-top:20px;
     display: flex;
@@ -42,6 +44,10 @@ h1{
     font-size: 35px;  
     text-decoration: underline;                
 }
+#start-button:hover{
+    background-color: #88a7ee;
+    color: black;
+}
 .btn-grid{
    padding-top: 20px;
    display: grid;
@@ -56,6 +62,10 @@ h1{
     height: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.btn:hover{
+    background-color: #88a7ee;
+    color: black;
+}
 #timer{
    display: flex;
    color:#EDE8E4;
@@ -64,6 +74,7 @@ h1{
  
    
 }
+
 footer{
     margin-top: -40px;
     bottom: 10px;
