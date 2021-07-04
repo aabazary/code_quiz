@@ -16,8 +16,8 @@ h1{
    text-align: center; 
    font-size: 42px;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   color: #EDE8E4;
-   text-decoration: #EDE8E4 underline;
+   color: #284177;
+   text-decoration: #284177 underline;
    margin-bottom: 10px;
 }
 #container{
@@ -56,6 +56,14 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #284177;
+    background-color:#88a7ee ;
+    margin: 0 20px 0 20px;
+    padding: 10px;
+    width: fit-content;
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
 
 }
 
@@ -66,15 +74,20 @@ h1{
     justify-content: center;
     align-items: center;
     background-color: #284177;
-    width: 350px;
+    width: 280px;
     height: 20px;
     color: #EDE8E4;
     padding: 10px;
     margin-top: 10px;   
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
     font-size: 20px;  
-    text-decoration: underline;   
+    border: 5px solid #363f53;
+}
 
+#questionsDiv li:hover{
+    cursor: pointer;
+    background-color: #88a7ee;
+    color: #284177;
 }
 
 #timer{
@@ -87,6 +100,7 @@ h1{
 }
 
 #createDiv{
+    margin-top: 10px;
     color: #EDE8E4;
     background-color:#88a7ee
 }

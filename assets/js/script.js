@@ -1,38 +1,40 @@
 //questions from the gif image
 var questions = [{
         title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        choices: ["Strings", "Booleans", "Alerts", "Numbers"],
+        answer: "Alerts"
     },
     {
         title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        choices: ["Quotes", "Curly Brackets", "Parentheses", "Square Brackets"],
+        answer: "Parentheses"
     },
     {
         title: "Arrays in Javascript can be used to store ____.",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        answer: "all of the above"
+        choices: ["Numbers and Strings", "Other Arrays", "Booleans", "All of the Above"],
+        answer: "All of the Above"
     },
     {
         title: "String values must be enclosed within ____ when being assigned to variables.",
-        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
-        answer: "quotes"
+        choices: ["Commas", "Curly Brackets", "Quotes", "Parenthesis"],
+        answer: "Quotes"
     },
     {
         title: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        choices: ["Javascript", "terminal / bash", "for loops", "console log"],
-        answer: "console log"
+        choices: ["Javascript", "Terminal / Bash", "For Loops", "Console Log"],
+        answer: "Console Log"
     },
 
 ];
 var questionIndex = 0;
+var score = 0;
 var startButton = document.querySelector('#start-button')
 var remainingTime = document.querySelector('#timer')
-
+var questionsDiv = document.querySelector("#questionsDiv");
+var container = document.querySelector("#container");
 var secondsLeft = 1000;
 var holdInterval = 0;
-var penalty = 10;
+var penalty = 100;
 
 var questionIndex = 0;
 var ulCreate = document.createElement("ul");
@@ -45,6 +47,7 @@ startButton.addEventListener("click", function () {
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
+                complete();
                 remainingTime.textContent = "Time's up!";
             }
         }, 1000);
@@ -84,10 +87,10 @@ function compare(event) {
 
         if (element.textContent == questions[questionIndex].answer) {
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
-
+            score++;
         } else {
-          
             createDiv.textContent = "Incorrect! The correct answer is:  " + questions[questionIndex].answer;
+            secondsLeft = secondsLeft - penalty;
         }
 
     }
@@ -95,10 +98,14 @@ function compare(event) {
     questionIndex++;
 
     if (questionIndex == questions.length) {
-        createDiv.textContent = "End of quiz!";
+        createDiv.textContent = "End of quiz! " + "You got  " + score + "/" + questions.length + " Correct!";
     } else {
         startQuiz(questionIndex);
     }
     questionsDiv.appendChild(createDiv);
 
+}
+
+
+function complete() {
 }
