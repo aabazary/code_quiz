@@ -4,6 +4,7 @@
 }
 .hide{
     display: none;
+
 }
 body{
     margin-top:20px;
@@ -48,24 +49,34 @@ h1{
     background-color: #88a7ee;
     color: black;
 }
-.btn-grid{
-   padding-top: 20px;
-   display: grid;
-   grid-template-columns: repeat(1,200px);
-   gap: 10px;
-   justify-content: center;
+
+#questionsDiv{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
-.btn{
-    background-color:#284177 ;
-    color:#EDE8E4;
-    width: 200px;
-    height: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+#questionsDiv li{
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #284177;
+    width: 350px;
+    height: 20px;
+    color: #EDE8E4;
+    padding: 10px;
+    margin-top: 10px;   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+    font-size: 20px;  
+    text-decoration: underline;   
+
 }
-.btn:hover{
-    background-color: #88a7ee;
-    color: black;
-}
+
 #timer{
    display: flex;
    color:#EDE8E4;
@@ -73,6 +84,11 @@ h1{
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  
    
+}
+
+#createDiv{
+    color: #EDE8E4;
+    background-color:#88a7ee
 }
 
 footer{
