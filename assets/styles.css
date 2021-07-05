@@ -124,3 +124,18 @@ p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
 }
+#back-button{
+    display: flex;
+    flex-direction: row;
+    color: #EDE8E4;
+    background-color: #284177;
+    font-size: 20px;
+    
+}
+#clear-button{
+    display: flex;
+    color: #EDE8E4;
+    background-color: #284177;
+    width: fit-content;
+    font-size: 20px;
+}
