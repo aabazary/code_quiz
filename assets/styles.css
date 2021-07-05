@@ -2,6 +2,14 @@
     margin: 0px;
     padding: 0px;
 }
+:root {
+    --navy-blue:#00171F;
+    --hover:#003459;
+    --text-color:#FFFFFF;
+    --dark-blue:#00A7E1;
+    --background-color:#007EA7;
+  }
+  
 .hide{
     display: none;
 
@@ -16,8 +24,8 @@ h1{
    text-align: center; 
    font-size: 42px;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   color: #284177;
-   text-decoration: #284177 underline;
+   color: var(--navy-blue);
+   text-decoration: var(--navy-blue) underline;
    margin-bottom: 10px;
 }
 #container{
@@ -27,18 +35,18 @@ h1{
     align-items: center;
     width: 500px;
     height: 500px;
-    background-color: black;
-    border: 10px solid #284177;
+    background-color: var(--background-color);
+    border: 10px solid var(--navy-blue);
     
 }
 #start-button{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #284177;
+    background-color: var(--navy-blue);
     width: fit-content;
     height: 50px;
-    color: #EDE8E4;
+    color: var(--text-color);
     padding: 10px;
     margin-top: 10px;   
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
@@ -46,25 +54,35 @@ h1{
     text-decoration: underline;                
 }
 #start-button:hover{
-    background-color: #88a7ee;
-    color: black;
+    background-color: var(--hover);
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 #questionsDiv{
-    color: white;
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #284177;
-    background-color:#88a7ee ;
+    color: var(--navy-blue);
+    background-color:var(--background-color);
     margin: 0 20px 0 20px;
     padding: 10px;
     width: fit-content;
     font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
-
+}
+#hs{
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 5px solid var(--navy-blue);
+    border-bottom: 0;
+    padding: 0 10px 0 10px;
+}
+#hs:hover{
+    background-color: var(--hover);
 }
 
 #questionsDiv li{
@@ -73,26 +91,26 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #284177;
-    width: 280px;
+    background-color: var(--navy-blue);
+    width: 220px;
     height: 20px;
-    color: #EDE8E4;
+    color: var(--text-color);
     padding: 10px;
     margin-top: 10px;   
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
     font-size: 20px;  
-    border: 5px solid #363f53;
+    border: 5px solid var(--dark-blue);
 }
 
 #questionsDiv li:hover{
     cursor: pointer;
-    background-color: #88a7ee;
-    color: #284177;
+    background-color: var(--hover);
+    color: var(--text-color);
 }
 
 #timer{
    display: flex;
-   color:#EDE8E4;
+   color:var(--text-color);
    font-size: 30px;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  
@@ -101,22 +119,23 @@ h1{
 
 #createDiv{
     margin-top: 10px;
-    color: #EDE8E4;
-    background-color:#88a7ee
+    color: var(--text-color);
+    background-color:var(--background-color)
 }
 
 footer{
-    margin-top: -40px;
+    margin-top: -60px;
     bottom: 10px;
     height: fit-content;
     width: 500px;
     display: flex; 
-    justify-content: flex-end;
+    justify-content: center;
 
 }
+
 p{
-    color: #EDE8E4;
-    background-color:#284177 ;
+    color: var(--text-color);
+    background-color:var(--navy-blue) ;
     margin: 0 20px 0 20px;
     padding: 10px;
     width: fit-content;
@@ -124,18 +143,35 @@ p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
 }
+
 #back-button{
     display: flex;
     flex-direction: row;
-    color: #EDE8E4;
-    background-color: #284177;
+    color: var(--text-color);
+    background-color: var(--navy-blue);
+    margin: 5px;
+    padding: 3px 10px 3px 10px;
     font-size: 20px;
-    
+    cursor: pointer;
 }
 #clear-button{
     display: flex;
-    color: #EDE8E4;
-    background-color: #284177;
+    color: var(--text-color);
+    background-color: var(--navy-blue);
     width: fit-content;
     font-size: 20px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 3px 10px 3px 10px;
+}
+
+
+@media screen and (max-width: 780px) {
+    #container{
+       max-width: 90%;
+    }
+    #questionsDiv{
+        max-width: 90%;
+    }
+
 }

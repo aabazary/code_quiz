@@ -26,19 +26,20 @@ var questions = [{
     },
 
 ];
+//assinging variables and giving default values
 var questionIndex = 0;
 var score = 0;
 var startButton = document.querySelector('#start-button')
 var remainingTime = document.querySelector('#timer');
 var questionsDiv = document.querySelector("#questionsDiv");
 var container = document.querySelector("#container");
-var secondsLeft = 1000;
+var secondsLeft = 100;
 var holdInterval = 0;
-var penalty = 100;
-
+var penalty = 20;
 var questionIndex = 0;
 var ulCreate = document.createElement("ul");
 
+//click event that starts the timer and runs the startQuiz function
 startButton.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
@@ -56,6 +57,7 @@ startButton.addEventListener("click", function () {
 
 });
 
+//function that uses the gif questions to populate the questionsDiv and creates an ul/li to populate answers
 function startQuiz(questionIndex) {
 
     questionsDiv.innerHTML = "";
@@ -76,7 +78,7 @@ function startQuiz(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
-
+//function determining if the answers chosen are the correct ones, giving a notification, and assigning a penalty if the answer is incorrect.
 function compare(event) {
     var element = event.target;
 
@@ -107,7 +109,7 @@ function compare(event) {
 
 }
 
-
+//function that renders the final results and changes the page of the quiz. css elements get added/styled in order for the user to see the 
 function complete() {
     questionsDiv.innerHTML = "";
     remainingTime.innerHTML = "";
@@ -151,12 +153,13 @@ function complete() {
 
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
-    createSubmit.setAttribute("id", "Submit");
+    createSubmit.setAttribute("id", "submit");
+    createSubmit.setAttribute("style", "background-color:var(--navy-blue); color:var(--text-color);cursor: pointer;margin:5px;padding: 3px 10px 3px 10px;");
     createSubmit.textContent = "Submit";
 
     questionsDiv.appendChild(createSubmit);
 
-
+// stores the scores locally and redirects to the highscore page, showing the previous scores.
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
 
