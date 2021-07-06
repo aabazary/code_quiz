@@ -50,6 +50,7 @@ startButton.addEventListener("click", function () {
                 clearInterval(holdInterval);
                 complete();
                 remainingTime.textContent = "Time's up!";
+                
             }
         }, 1000);
     }
@@ -86,6 +87,7 @@ function compare(event) {
 
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
+        createDiv.setAttribute("style","text-align: center;")
 
         if (element.textContent == questions[questionIndex].answer) {
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
@@ -127,30 +129,21 @@ function complete() {
     questionsDiv.appendChild(createP);
 
 
-//final score area
-    if (secondsLeft >= 0) {
-        var timeRemaining = secondsLeft;
-        var createP2 = document.createElement("p");
-        clearInterval(holdInterval);
-        createP.textContent = "Your final score is: " + timeRemaining;
-        createP2.setAttribute("style", "padding:0px;")
-        questionsDiv.appendChild(createP2);
-    }
 
 //initials text
-    var createLabel = document.createElement("label");
-    createLabel.setAttribute("id", "createLabel");
-    createLabel.textContent = "Enter initials: ";
+    var initialLabel = document.createElement("label");
+    initialLabel.setAttribute("id", "initialLabel");
+    initialLabel.textContent = "Enter initials: ";
 
-    questionsDiv.appendChild(createLabel);
+    questionsDiv.appendChild(initialLabel);
 
 //initials input
-    var createInput = document.createElement("input");
-    createInput.setAttribute("type", "text");
-    createInput.setAttribute("id", "initials");
-    createInput.textContent = "";
+    var initialBox = document.createElement("input");
+    initialBox.setAttribute("type", "text");
+    initialBox.setAttribute("id", "initials");
+    initialBox.textContent = "";
 
-    questionsDiv.appendChild(createInput);
+    questionsDiv.appendChild(initialBox);
 //submit button
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
@@ -160,9 +153,25 @@ function complete() {
 
     questionsDiv.appendChild(createSubmit);
 
+
+//final score area
+if (secondsLeft >= 0) {
+    var timeRemaining = secondsLeft;
+    var createP2 = document.createElement("p");
+    clearInterval(holdInterval);
+    createP.textContent = "Your final score is: " + timeRemaining;
+    createP2.setAttribute("style", "padding:0px;")
+    questionsDiv.appendChild(createP2);
+} else{
+    createP.textContent ="You have run out of time!"
+    createSubmit.setAttribute("style","display:none;")
+    initialLabel.setAttribute("style","display:none;")
+    initialBox.setAttribute("style","display:none;")
+}
+
 // stores the scores locally and redirects to the highscore page, showing the previous scores.
     createSubmit.addEventListener("click", function () {
-        var initials = createInput.value;
+        var initials = initialBox.value;
 
         if (initials === null) {
 

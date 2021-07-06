@@ -70,7 +70,7 @@ h1{
     margin: 0 20px 0 20px;
     padding: 10px;
     width: fit-content;
-    font-size: 24px;
+    font-size: 22px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
 }
@@ -120,12 +120,13 @@ h1{
 #createDiv{
     margin-top: 10px;
     color: var(--text-color);
-    background-color:var(--background-color)
+    background-color:var(--background-color);
+    text-align: center;
 }
 
 
 footer{
-    margin-top: -60px;
+    margin-top: -50px;
     bottom: 10px;
     height: fit-content;
     width: 500px;
@@ -144,6 +145,7 @@ p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
     list-style-type: none;
+    text-align: center;
 }
 
 #back-button{
@@ -165,6 +167,7 @@ p{
     cursor: pointer;
     margin: 5px;
     padding: 3px 10px 3px 10px;
+    
 }
 
 
@@ -172,8 +175,5 @@ p{
     #container{
        max-width: 90%;
     }
-    #questionsDiv{
-        max-width: 90%;
-    }
-
+    
 }
