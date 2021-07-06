@@ -113,7 +113,7 @@ function compare(event) {
 function complete() {
     questionsDiv.innerHTML = "";
     remainingTime.innerHTML = "";
-
+//h1 area
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
     createH1.textContent = "Quiz Complete!"
@@ -127,30 +127,31 @@ function complete() {
     questionsDiv.appendChild(createP);
 
 
+//final score area
     if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
         createP.textContent = "Your final score is: " + timeRemaining;
-
+        createP2.setAttribute("style", "padding:0px;")
         questionsDiv.appendChild(createP2);
     }
 
-
+//initials text
     var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
     createLabel.textContent = "Enter initials: ";
 
     questionsDiv.appendChild(createLabel);
 
-
+//initials input
     var createInput = document.createElement("input");
     createInput.setAttribute("type", "text");
     createInput.setAttribute("id", "initials");
     createInput.textContent = "";
 
     questionsDiv.appendChild(createInput);
-
+//submit button
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "submit");

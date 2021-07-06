@@ -123,6 +123,7 @@ h1{
     background-color:var(--background-color)
 }
 
+
 footer{
     margin-top: -60px;
     bottom: 10px;
@@ -142,6 +143,7 @@ p{
     font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
+    list-style-type: none;
 }
 
 #back-button{
