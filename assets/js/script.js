@@ -50,7 +50,7 @@ startButton.addEventListener("click", function () {
                 clearInterval(holdInterval);
                 complete();
                 remainingTime.textContent = "Time's up!";
-                
+
             }
         }, 1000);
     }
@@ -87,7 +87,7 @@ function compare(event) {
 
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
-        createDiv.setAttribute("style","text-align: center;")
+        createDiv.setAttribute("style", "text-align: center;")
 
         if (element.textContent == questions[questionIndex].answer) {
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
@@ -115,7 +115,7 @@ function compare(event) {
 function complete() {
     questionsDiv.innerHTML = "";
     remainingTime.innerHTML = "";
-//h1 area
+    //h1 area
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
     createH1.textContent = "Quiz Complete!"
@@ -130,21 +130,21 @@ function complete() {
 
 
 
-//initials text
+    //initials text
     var initialLabel = document.createElement("label");
     initialLabel.setAttribute("id", "initialLabel");
     initialLabel.textContent = "Enter initials: ";
 
     questionsDiv.appendChild(initialLabel);
 
-//initials input
+    //initials input
     var initialBox = document.createElement("input");
     initialBox.setAttribute("type", "text");
     initialBox.setAttribute("id", "initials");
     initialBox.textContent = "";
 
     questionsDiv.appendChild(initialBox);
-//submit button
+    //submit button
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "submit");
@@ -154,22 +154,22 @@ function complete() {
     questionsDiv.appendChild(createSubmit);
 
 
-//final score area
-if (secondsLeft >= 0) {
-    var timeRemaining = secondsLeft;
-    var createP2 = document.createElement("p");
-    clearInterval(holdInterval);
-    createP.textContent = "Your final score is: " + timeRemaining;
-    createP2.setAttribute("style", "padding:0px;")
-    questionsDiv.appendChild(createP2);
-} else{
-    createP.textContent ="You have run out of time!"
-    createSubmit.setAttribute("style","display:none;")
-    initialLabel.setAttribute("style","display:none;")
-    initialBox.setAttribute("style","display:none;")
-}
+    //final score area
+    if (secondsLeft >= 0) {
+        var timeRemaining = secondsLeft;
+        var createP2 = document.createElement("p");
+        clearInterval(holdInterval);
+        createP.textContent = "Final Score: " + timeRemaining;
+        createP2.setAttribute("style", "padding:0px;")
+        questionsDiv.appendChild(createP2);
+    } else {
+        createP.textContent = "You don't even deserve a back button, Refresh in shame."
+        createSubmit.setAttribute("style", "display:none;")
+        initialLabel.setAttribute("style", "display:none;")
+        initialBox.setAttribute("style", "display:none;")
+    }
 
-// stores the scores locally and redirects to the highscore page, showing the previous scores.
+    // stores the scores locally and redirects to the highscore page, showing the previous scores.
     createSubmit.addEventListener("click", function () {
         var initials = initialBox.value;
 
